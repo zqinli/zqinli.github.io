@@ -9218,7 +9218,10 @@ body.okayNav-loaded {
     display: none !important;
 }
 
-/* 隐藏 Valine 评论框底部的版权信息 */
 .vpower {
+    display: none !important;
+}
+
+.article-comment-link {
     display: none !important;
 }
