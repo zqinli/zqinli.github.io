@@ -9217,3 +9217,8 @@ body.okayNav-loaded {
 .post-copyright {
     display: none !important;
 }
+
+/* 隐藏 Valine 评论框底部的版权信息 */
+.vpower {
+    display: none !important;
+}
