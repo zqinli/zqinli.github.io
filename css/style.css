@@ -9218,3 +9218,6 @@ body.okayNav-loaded {
     display: none !important;
 }
 
+.search-form {
+    display: none !important;
+}
