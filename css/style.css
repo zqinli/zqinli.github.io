@@ -9214,18 +9214,7 @@ body.okayNav-loaded {
   }
 }
 
-.post-copyright, 
-.article-copyright,
-.profile-block, 
-.article-footer .profile-block,
-.article-entry .profile-block,
-#author-profile {
+.post-copyright {
     display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    opacity: 0 !important;
-    border: 0 !important;
 }
+
