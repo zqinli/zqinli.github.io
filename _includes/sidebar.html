@@ -1,12 +1,44 @@
 <aside class="sidebar" aria-label="Profile">
   <img class="avatar" src="{{ site.data.profile.avatar | relative_url }}" alt="{{ site.data.profile.name }} profile photo placeholder">
   <h1>{{ site.data.profile.name }}</h1>
-  <p class="role">{{ site.data.profile.role }}</p>
-  <p>{{ site.data.profile.affiliation }}</p>
-  <p>{{ site.data.profile.location }}</p>
+  <div class="profile-meta">
+    <p>
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 10.5 12 5l9 5.5"></path>
+        <path d="M5 10v8"></path>
+        <path d="M9 10v8"></path>
+        <path d="M15 10v8"></path>
+        <path d="M19 10v8"></path>
+        <path d="M4 18h16"></path>
+      </svg>
+      <span>{{ site.data.profile.affiliation }}</span>
+    </p>
+    <p>
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12z"></path>
+        <circle cx="12" cy="9" r="2.5"></circle>
+      </svg>
+      <span>{{ site.data.profile.location }}</span>
+    </p>
+  </div>
   <ul class="profile-links">
-    <li><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></li>
-    <li><a href="{{ site.data.profile.github }}">GitHub</a></li>
+    <li>
+      <a href="mailto:{{ site.data.profile.email }}">
+        <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16v12H4z"></path>
+          <path d="m4 7 8 6 8-6"></path>
+        </svg>
+        <span>{{ site.data.profile.email }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.data.profile.github }}">
+        <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.35 1.08 2.92.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.01c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"></path>
+        </svg>
+        <span>GitHub</span>
+      </a>
+    </li>
     {% if site.data.profile.scholar and site.data.profile.scholar != "" %}
     <li><a href="{{ site.data.profile.scholar }}">Google Scholar</a></li>
     {% endif %}

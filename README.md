@@ -15,8 +15,7 @@ Then open `http://127.0.0.1:4000`.
 
 - Profile details: `_data/profile.yml`
 - News items: `_data/news.yml`
-- Activities: `_data/activities.yml`
 - Publications: add or edit Markdown files in `_publications/`
 - Styling: `assets/css/main.css`
 
-The DiFRa entry is marked as a manuscript / pre-publication repository. Update the venue only after an official publication decision.
+The DiFRa entry is listed as accepted to Findings of ACL 2026.

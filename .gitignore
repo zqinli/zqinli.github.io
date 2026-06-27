@@ -6,7 +6,6 @@
 !/README.md
 !/index.md
 !/publications.md
-!/activities.md
 
 !/_data/
 !/_data/**
@@ -25,3 +24,4 @@ _site/
 .jekyll-metadata
 .bundle/
 Gemfile.lock
+.DS_Store

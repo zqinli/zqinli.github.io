@@ -6,27 +6,50 @@
   {% endif %}
   <div class="publication-body">
     <h3>{{ publication.title }}</h3>
-    <p class="authors">{{ publication.authors }}</p>
+    <p class="authors">{{ publication.authors | replace: 'Zhenqin Li', '<strong class="author-me">Zhenqin Li</strong>' }}</p>
     <p class="venue">{{ publication.venue }}{% if publication.year %}, {{ publication.year }}{% endif %}</p>
-    <div class="publication-description">
-      {{ publication.content | markdownify }}
-    </div>
     <div class="publication-actions">
-      {% if publication.paper %}
-      <a class="button" href="{{ publication.paper | relative_url }}">PDF</a>
+      {% if publication.paper and publication.paper != "" %}
+      <a class="button" href="{{ publication.paper | relative_url }}">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <path d="M14 2v6h6"></path>
+          <path d="M8 13h8"></path>
+          <path d="M8 17h5"></path>
+        </svg>
+        <span>PDF</span>
+      </a>
+      {% elsif publication.show_pdf %}
+      <span class="button button-disabled" aria-disabled="true">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <path d="M14 2v6h6"></path>
+          <path d="M8 13h8"></path>
+          <path d="M8 17h5"></path>
+        </svg>
+        <span>PDF</span>
+      </span>
       {% endif %}
       {% if publication.code %}
-      <a class="button" href="{{ publication.code }}">Code</a>
+      <a class="button" href="{{ publication.code }}">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 18-6-6 6-6"></path>
+          <path d="m15 6 6 6-6 6"></path>
+        </svg>
+        <span>Code</span>
+      </a>
       {% endif %}
-      {% if publication.bibtex %}
-      <a class="button" href="#bibtex-{{ publication.slug }}">BibTeX</a>
+      {% if publication.bibtex or publication.show_bibtex %}
+      <button class="button bibtex-open" type="button" data-bibtex="{{ publication.bibtex | strip | escape }}">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 4h12"></path>
+          <path d="M8 4v16"></path>
+          <path d="M16 4v16"></path>
+          <path d="M6 20h12"></path>
+        </svg>
+        <span>BibTeX</span>
+      </button>
       {% endif %}
     </div>
-    {% if publication.bibtex %}
-    <details class="bibtex" id="bibtex-{{ publication.slug }}">
-      <summary>BibTeX</summary>
-      <pre><code>{{ publication.bibtex | escape }}</code></pre>
-    </details>
-    {% endif %}
   </div>
 </article>
