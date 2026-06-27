@@ -3,6 +3,7 @@
 [![Website](https://img.shields.io/badge/Website-zqinli.github.io-blue)](https://zqinli.github.io)
 [![Jekyll](https://img.shields.io/badge/Built%20with-Jekyll-red)](https://jekyllrb.com/)
 [![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-black)](https://pages.github.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Personal academic homepage for Zhenqin Li. The site is built with Jekyll and is designed for GitHub Pages deployment.
 
