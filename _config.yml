@@ -1,0 +1,59 @@
+title: Zhenqin Li
+description: Personal academic homepage of Zhenqin Li
+url: "https://zqinli.github.io"
+baseurl: ""
+markdown: kramdown
+
+collections:
+  publications:
+    output: true
+    permalink: /publications/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: page
+
+exclude:
+  - vendor
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache
+  - .bundle
+  - .cache
+  - .codex
+  - .conda
+  - .config
+  - .local
+  - .npm
+  - .ssh
+  - .vscode
+  - .vscode-server
+  - DCMQAG
+  - LZQ
+  - LlamaFactory
+  - QAG
+  - _QAG
+  - abc
+  - baselines
+  - data
+  - homepage
+  - iworkplace
+  - model_download
+  - nltk_data
+  - rl-space
+  - rl-workplace
+  - wheelhouse
+  - workplace
+  - zqli
+  - "——baselines"
+  - "=2.0.0,"
+  - flash_attn-2.8.3+cu128torch2.11-cp313-cp313-linux_x86_64.whl
+  - test.py
+  - Gemfile.lock

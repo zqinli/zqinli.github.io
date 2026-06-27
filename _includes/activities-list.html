@@ -1,0 +1,8 @@
+<div class="activity-list">
+  {% for item in site.data.activities %}
+  <article class="activity-item">
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </article>
+  {% endfor %}
+</div>
