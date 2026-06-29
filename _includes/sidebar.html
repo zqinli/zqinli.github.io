@@ -4,6 +4,13 @@
   <div class="profile-meta">
     <p>
       <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12z"></path>
+        <circle cx="12" cy="9" r="2.5"></circle>
+      </svg>
+      <span>{{ site.data.profile.location }}</span>
+    </p>
+    <p>
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 10.5 12 5l9 5.5"></path>
         <path d="M5 10v8"></path>
         <path d="M9 10v8"></path>
@@ -11,24 +18,42 @@
         <path d="M19 10v8"></path>
         <path d="M4 18h16"></path>
       </svg>
-      <span>{{ site.data.profile.affiliation }}</span>
-    </p>
-    <p>
-      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 21s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12z"></path>
-        <circle cx="12" cy="9" r="2.5"></circle>
-      </svg>
-      <span>{{ site.data.profile.location }}</span>
+      <a class="plain-profile-link" href="https://www.scnu.edu.cn/">{{ site.data.profile.affiliation }}</a>
     </p>
   </div>
   <ul class="profile-links">
+    {% for email in site.data.profile.emails %}
     <li>
-      <a href="mailto:{{ site.data.profile.email }}">
+      <a href="mailto:{{ email }}">
         <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M4 6h16v12H4z"></path>
           <path d="m4 7 8 6 8-6"></path>
         </svg>
-        <span>{{ site.data.profile.email }}</span>
+        <span>{{ email }}</span>
+      </a>
+    </li>
+    {% endfor %}
+    {% if site.data.profile.scholar and site.data.profile.scholar != "" %}
+    <li>
+      <a href="{{ site.data.profile.scholar }}">
+        <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3 3 10l9 7 9-7z"></path>
+          <path d="M6.5 12.5V17c1.6 1.3 3.4 2 5.5 2s3.9-.7 5.5-2v-4.5"></path>
+          <path d="M21 10v7"></path>
+        </svg>
+        <span>Google Scholar</span>
+      </a>
+    </li>
+    {% endif %}
+    <li>
+      <a href="{{ site.data.profile.orcid }}">
+        <svg class="link-icon orcid-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M9 8v8"></path>
+          <path d="M12 8h2.2a3.8 3.8 0 0 1 0 7.6H12z"></path>
+          <circle cx="9" cy="5.8" r="0.8"></circle>
+        </svg>
+        <span>ORCID</span>
       </a>
     </li>
     <li>
@@ -39,9 +64,5 @@
         <span>GitHub</span>
       </a>
     </li>
-    {% if site.data.profile.scholar and site.data.profile.scholar != "" %}
-    <li><a href="{{ site.data.profile.scholar }}">Google Scholar</a></li>
-    {% endif %}
   </ul>
-  <!-- Add a Google Scholar URL in _data/profile.yml to display it here. -->
 </aside>

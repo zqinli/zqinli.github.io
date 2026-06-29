@@ -81,8 +81,6 @@ document.querySelectorAll(".bibtex-open").forEach((button) => {
     text.value = bibtex;
     status.textContent = "";
     modal.classList.add("is-visible");
-    text.focus();
-    text.select();
 
     copy.onclick = async () => {
       try {

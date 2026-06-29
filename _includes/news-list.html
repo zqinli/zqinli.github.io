@@ -1,5 +1,9 @@
 <ul class="news-list">
-  {% for item in site.data.news %}
+  {% assign news_items = site.data.news %}
+  {% if include.limit %}
+    {% assign news_items = news_items | slice: 0, include.limit %}
+  {% endif %}
+  {% for item in news_items %}
   <li>
     <span><time>[{{ item.date }}]</time> {{ item.text }}</span>
   </li>

@@ -3,8 +3,11 @@
 !/.gitignore
 !/_config.yml
 !/Gemfile
+!/LICENSE
 !/README.md
+!/about.md
 !/index.md
+!/news.md
 !/publications.md
 
 !/_data/

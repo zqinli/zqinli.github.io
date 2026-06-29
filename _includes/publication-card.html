@@ -9,7 +9,7 @@
     <p class="authors">{{ publication.authors | replace: 'Zhenqin Li', '<strong class="author-me">Zhenqin Li</strong>' }}</p>
     <p class="venue">{{ publication.venue }}{% if publication.year %}, {{ publication.year }}{% endif %}</p>
     <div class="publication-actions">
-      {% if publication.paper and publication.paper != "" %}
+      {% if publication.show_pdf and publication.paper and publication.paper != "" %}
       <a class="button" href="{{ publication.paper | relative_url }}">
         <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -30,16 +30,7 @@
         <span>PDF</span>
       </span>
       {% endif %}
-      {% if publication.code %}
-      <a class="button" href="{{ publication.code }}">
-        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="m9 18-6-6 6-6"></path>
-          <path d="m15 6 6 6-6 6"></path>
-        </svg>
-        <span>Code</span>
-      </a>
-      {% endif %}
-      {% if publication.bibtex or publication.show_bibtex %}
+      {% if publication.show_bibtex %}
       <button class="button bibtex-open" type="button" data-bibtex="{{ publication.bibtex | strip | escape }}">
         <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 4h12"></path>
@@ -49,6 +40,16 @@
         </svg>
         <span>BibTeX</span>
       </button>
+      {% endif %}
+      {% if publication.show_code and publication.code %}
+      <a class="button" href="{{ publication.code }}">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m8 18-6-6 6-6"></path>
+          <path d="m11.25 17 2.5-10"></path>
+          <path d="m16 6 6 6-6 6"></path>
+        </svg>
+        <span>Code</span>
+      </a>
       {% endif %}
     </div>
   </div>
