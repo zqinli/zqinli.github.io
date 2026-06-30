@@ -3,25 +3,29 @@
 [![Website](https://img.shields.io/badge/Website-zqinli.github.io-blue)](https://zqinli.github.io)
 [![Jekyll](https://img.shields.io/badge/Built%20with-Jekyll-red)](https://jekyllrb.com/)
 [![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-black)](https://pages.github.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Personal academic homepage for Zhenqin Li. The site is built with Jekyll and is designed for GitHub Pages deployment.
+Personal academic homepage for Zhenqin Li, built with Jekyll and deployed through GitHub Pages.
 
-## What It Does
+## Features
 
-- Displays profile information, contact links, and research homepage navigation.
+- Displays profile information, contact links, and academic navigation.
 - Shows recent news from `_data/news.yml`.
 - Lists publications from the `_publications/` collection.
+- Supports publication buttons for PDF, BibTeX, and code links.
 - Supports light/dark mode switching.
-- Keeps content editable through Markdown, YAML, HTML includes, and local CSS.
+- Keeps content editable through Markdown, YAML, Liquid includes, CSS, and JavaScript.
 
-## What To Update
+## Repository Structure
 
 - Profile: `_data/profile.yml`
 - News: `_data/news.yml`
 - Publications: `_publications/*.md`
-- Homepage text: `index.md`
-- Navigation/sidebar layout: `_includes/`
+- Homepage: `index.md`
+- About page: `about.md`
+- Publications page: `publications.md`
 - Page templates: `_layouts/`
+- Reusable components: `_includes/`
 - Styles: `assets/css/main.css`
 - Scripts: `assets/js/main.js`
 - Images: `assets/images/`
@@ -33,22 +37,20 @@ git clone https://github.com/zqinli/zqinli.github.io.git homepage
 cd homepage
 ```
 
-If the repository is already available locally:
+For the existing local checkout:
 
 ```bash
 cd /home/zhenqinli/homepage
 ```
 
-## Environment
-
-Required tools:
+## Requirements
 
 - Git
 - Ruby
 - Bundler
-- Jekyll
+- Jekyll dependencies from the repository `Gemfile`
 
-This local setup uses the existing Conda environment named `homepage`:
+This machine uses a Conda environment named `homepage`:
 
 ```bash
 conda activate homepage
@@ -56,13 +58,7 @@ ruby --version
 bundle --version
 ```
 
-Expected local commands in this repository use Bundler `2.5.22`:
-
-```bash
-bundle _2.5.22_ --version
-```
-
-For a fresh machine without the Conda environment, install Ruby first, then install Bundler:
+On a fresh machine, install Ruby first, then Bundler:
 
 ```bash
 gem install bundler
@@ -76,13 +72,11 @@ conda activate homepage
 bundle _2.5.22_ install --local
 ```
 
-If running in a normal Ruby environment, this is usually enough:
+In a normal Ruby environment:
 
 ```bash
 bundle install
 ```
-
-If Bundler reports missing gems, install them through the active Ruby environment and run `bundle install` again.
 
 ## Preview
 
@@ -108,10 +102,10 @@ bundle _2.5.22_ exec jekyll build
 
 The generated site is written to `_site/`.
 
-## Common Update Flow
+## Update Flow
 
 1. Edit content files such as `_data/profile.yml`, `_data/news.yml`, `index.md`, or `_publications/*.md`.
-2. Run a local build:
+2. Build locally:
 
 ```bash
 bundle _2.5.22_ exec jekyll build
@@ -123,25 +117,16 @@ bundle _2.5.22_ exec jekyll build
 bundle _2.5.22_ exec jekyll serve
 ```
 
-4. Commit the update:
+4. Commit and push:
 
 ```bash
 git status
 git add -A
 git commit -m "update homepage"
+git push origin main
 ```
 
-## Update Main
-
-```bash
-cd /home/zhenqinli/homepage
-git status
-git add -A
-git commit -m "update homepage"
-git branch -M main
-```
-
-If a GitHub remote is configured later, deployment can be handled separately through GitHub Pages.
+Deployment is handled by GitHub Pages from the `main` branch.
 
 ## Publication Entry Format
 
@@ -156,6 +141,7 @@ year: 2026
 teaser: "/assets/images/example.png"
 paper: ""
 show_pdf: true
+show_code: true
 code: "https://github.com/zqinli/DiFRa"
 bibtex: ""
 show_bibtex: true
@@ -168,7 +154,3 @@ Use empty `paper` or `bibtex` values as placeholders until final files or citati
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=zqinli/zqinli.github.io&type=Date)](https://www.star-history.com/#zqinli/zqinli.github.io&Date)
-
-## License
-
-This repository is released under the [MIT License](LICENSE).
