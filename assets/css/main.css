@@ -323,14 +323,13 @@ a:hover {
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  padding: 0.75rem;
+  padding: 0.4rem;
 }
 
 .publication-teaser img {
   display: block;
-  height: 150px;
+  height: 160px;
   object-fit: contain;
-  transform: scale(1.18);
   width: 100%;
 }
 
@@ -516,7 +515,7 @@ code {
   }
 
   .publication-teaser img {
-    height: 125px;
+    height: 135px;
   }
 }
 
@@ -544,7 +543,7 @@ code {
   }
 
   .publication-teaser img {
-    height: 105px;
+    height: 115px;
   }
 
   .publication-body h3 {
