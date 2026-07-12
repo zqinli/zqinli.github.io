@@ -150,13 +150,3 @@ selected: true
 ```
 
 Use empty `paper` or `bibtex` values as placeholders until final files or citations are ready.
-
-## Star History
-
-<a href="https://www.star-history.com/?repos=zqinli%2Fzqinli.github.io&type=date&logscale=&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=zqinli/zqinli.github.io&type=date&theme=dark&logscale&legend=top-left&sealed_token=sU4EmYQnSO2vCVhfq8rfKY3PKQfHRr_D39rKBNcRs16OdbDMVejCrWJ0o0SSnLBs3xYqVvIX3jftxDJ7pwxWA2G9ga0wForPGtX9ImccD44gM1-nC9mL6w" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=zqinli/zqinli.github.io&type=date&logscale&legend=top-left&sealed_token=sU4EmYQnSO2vCVhfq8rfKY3PKQfHRr_D39rKBNcRs16OdbDMVejCrWJ0o0SSnLBs3xYqVvIX3jftxDJ7pwxWA2G9ga0wForPGtX9ImccD44gM1-nC9mL6w" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=zqinli/zqinli.github.io&type=date&logscale&legend=top-left&sealed_token=sU4EmYQnSO2vCVhfq8rfKY3PKQfHRr_D39rKBNcRs16OdbDMVejCrWJ0o0SSnLBs3xYqVvIX3jftxDJ7pwxWA2G9ga0wForPGtX9ImccD44gM1-nC9mL6w" />
-</picture>
-</a>
