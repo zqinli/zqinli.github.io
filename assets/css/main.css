@@ -322,14 +322,20 @@ a:hover {
   border: 1px solid var(--border-soft);
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
+  display: flex;
+  height: 188px;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  padding: 0.4rem;
+  padding: 0.35rem;
 }
 
 .publication-teaser img {
   display: block;
-  height: 160px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
 }
 
@@ -515,7 +521,11 @@ code {
   }
 
   .publication-teaser img {
-    height: 135px;
+    height: 100%;
+  }
+
+  .publication-teaser {
+    height: 150px;
   }
 }
 
@@ -543,7 +553,11 @@ code {
   }
 
   .publication-teaser img {
-    height: 115px;
+    height: 100%;
+  }
+
+  .publication-teaser {
+    height: 128px;
   }
 
   .publication-body h3 {
@@ -590,11 +604,13 @@ code {
   }
 
   .publication-teaser {
+    height: auto;
     max-width: 280px;
   }
 
   .publication-teaser img {
     height: auto;
+    object-fit: contain;
   }
 }
 
