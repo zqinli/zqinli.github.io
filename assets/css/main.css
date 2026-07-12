@@ -312,7 +312,7 @@ a:hover {
   align-items: start;
   display: grid;
   gap: clamp(1rem, 2vw, 1.45rem);
-  grid-template-columns: minmax(205px, 24%) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 32%) minmax(0, 1fr);
   padding: 0.25rem 0 1rem;
 }
 
@@ -328,8 +328,7 @@ a:hover {
 
 .publication-teaser img {
   display: block;
-  height: 150px;
-  object-fit: contain;
+  height: auto;
   width: 100%;
 }
 
@@ -511,11 +510,7 @@ code {
   }
 
   .publication-card {
-    grid-template-columns: 180px minmax(0, 1fr);
-  }
-
-  .publication-teaser img {
-    height: 125px;
+    grid-template-columns: 260px minmax(0, 1fr);
   }
 }
 
@@ -539,11 +534,7 @@ code {
   }
 
   .publication-card {
-    grid-template-columns: 150px minmax(0, 1fr);
-  }
-
-  .publication-teaser img {
-    height: 105px;
+    grid-template-columns: 220px minmax(0, 1fr);
   }
 
   .publication-body h3 {
