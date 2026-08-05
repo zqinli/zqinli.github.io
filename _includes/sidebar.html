@@ -1,25 +1,23 @@
 <aside class="sidebar" aria-label="Profile">
-  <div class="profile-overview">
-    <div class="profile-meta">
-      <p>
-        <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 21s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12z"></path>
-          <circle cx="12" cy="9" r="2.5"></circle>
-        </svg>
-        <span>{{ site.data.profile.location }}</span>
-      </p>
-      <p>
-        <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M3 10.5 12 5l9 5.5"></path>
-          <path d="M5 10v8"></path>
-          <path d="M9 10v8"></path>
-          <path d="M15 10v8"></path>
-          <path d="M19 10v8"></path>
-          <path d="M4 18h16"></path>
-        </svg>
-        <a href="https://www.scnu.edu.cn/">{{ site.data.profile.affiliation }}</a>
-      </p>
-    </div>
+  <div class="profile-meta">
+    <p>
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12z"></path>
+        <circle cx="12" cy="9" r="2.5"></circle>
+      </svg>
+      <span>{{ site.data.profile.location }}</span>
+    </p>
+    <p>
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 10.5 12 5l9 5.5"></path>
+        <path d="M5 10v8"></path>
+        <path d="M9 10v8"></path>
+        <path d="M15 10v8"></path>
+        <path d="M19 10v8"></path>
+        <path d="M4 18h16"></path>
+      </svg>
+      <a href="https://www.scnu.edu.cn/">{{ site.data.profile.affiliation }}</a>
+    </p>
   </div>
   <ul class="profile-links">
     {% for email in site.data.profile.emails %}

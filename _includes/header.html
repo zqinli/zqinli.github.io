@@ -1,14 +1,17 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary navigation">
+    {% if page.title == "Home" %}
+    <h1 class="brand"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    {% else %}
     <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {% endif %}
     <div class="nav-links">
       <a{% if page.url == '/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
       <a{% if page.url == '/about/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
       <a{% if page.url contains '/publications/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/publications/' | relative_url }}">Publications</a>
       <button class="theme-toggle" type="button" aria-label="Switch color mode" title="Switch color mode">
         <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5z"></path>
-          <path d="M19.4 15a1.8 1.8 0 0 0 .36 1.98l.04.04a2.1 2.1 0 0 1-2.97 2.97l-.04-.04a1.8 1.8 0 0 0-1.98-.36 1.8 1.8 0 0 0-1.09 1.65V21.3a2.1 2.1 0 0 1-4.2 0v-.06a1.8 1.8 0 0 0-1.09-1.65 1.8 1.8 0 0 0-1.98.36l-.04.04a2.1 2.1 0 1 1-2.97-2.97l.04-.04A1.8 1.8 0 0 0 3.84 15a1.8 1.8 0 0 0-1.65-1.09H2.1a2.1 2.1 0 0 1 0-4.2h.09a1.8 1.8 0 0 0 1.65-1.09 1.8 1.8 0 0 0-.36-1.98l-.04-.04a2.1 2.1 0 0 1 2.97-2.97l.04.04a1.8 1.8 0 0 0 1.98.36A1.8 1.8 0 0 0 9.52 2.4V2.1a2.1 2.1 0 0 1 4.2 0v.3a1.8 1.8 0 0 0 1.09 1.65 1.8 1.8 0 0 0 1.98-.36l.04-.04A2.1 2.1 0 0 1 19.8 6.6l-.04.04a1.8 1.8 0 0 0-.36 1.98 1.8 1.8 0 0 0 1.65 1.09h.09a2.1 2.1 0 0 1 0 4.2h-.09A1.8 1.8 0 0 0 19.4 15z"></path>
+          <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"></path>
         </svg>
       </button>
     </div>

@@ -21,9 +21,9 @@ Personal academic homepage for Zhenqin Li, built with Jekyll and deployed throug
 - Profile: `_data/profile.yml`
 - News: `_data/news.yml`
 - Publications: `_publications/*.md`
-- Homepage: `index.md`
+- Homepage: `index.html`
 - About page: `about.md`
-- Publications page: `publications.md`
+- Publications page: `publications.html`
 - Page templates: `_layouts/`
 - Reusable components: `_includes/`
 - Styles: `assets/css/main.css`
@@ -104,7 +104,7 @@ The generated site is written to `_site/`.
 
 ## Update Flow
 
-1. Edit content files such as `_data/profile.yml`, `_data/news.yml`, `index.md`, or `_publications/*.md`.
+1. Edit content files such as `_data/profile.yml`, `_data/news.yml`, `index.html`, or `_publications/*.md`.
 2. Build locally:
 
 ```bash
