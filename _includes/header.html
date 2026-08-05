@@ -2,9 +2,9 @@
   <nav class="nav" aria-label="Primary navigation">
     <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <div class="nav-links">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <a href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a{% if page.url == '/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
+      <a{% if page.url == '/about/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
+      <a{% if page.url contains '/publications/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/publications/' | relative_url }}">Publications</a>
       <button class="theme-toggle" type="button" aria-label="Switch color mode" title="Switch color mode">
         <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5z"></path>

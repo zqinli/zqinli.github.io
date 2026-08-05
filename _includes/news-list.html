@@ -5,7 +5,8 @@
   {% endif %}
   {% for item in news_items %}
   <li>
-    <span><time>[{{ item.date }}]</time> {{ item.text }}</span>
+    <time datetime="{{ item.date | replace: '/', '-' }}">{{ item.date }}</time>
+    <span>{{ item.text }}</span>
   </li>
   {% endfor %}
 </ul>

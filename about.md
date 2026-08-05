@@ -2,10 +2,11 @@
 title: About
 layout: page
 permalink: /about/
+description: Education and academic background of Zhenqin Li.
 ---
 
 <section class="about-section">
-  <h2>Educations:</h2>
+  <h2>Education</h2>
 
   <ul class="education-list">
     <li>

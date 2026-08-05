@@ -1,5 +1,6 @@
 ---
 title: "DiFRa: A Unified Framework for Harmonizing Semantic Diversity and Factual Consistency in Question-Answer Generation"
+description: "DiFRa studies question-answer generation by harmonizing semantic diversity and factual consistency."
 authors: "Zhenqin Li, Shengyong Ding, and Shuangyin Li"
 venue: "Findings of ACL"
 year: 2026

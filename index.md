@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: default
+description: Academic homepage of Zhenqin Li, featuring research news and publications in computer science.
 ---
 
 <section class="section intro">

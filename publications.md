@@ -2,6 +2,7 @@
 title: Publications
 layout: page
 permalink: /publications/
+description: Research publications by Zhenqin Li.
 ---
 
 {% assign publications = site.publications | sort: "year" | reverse %}
