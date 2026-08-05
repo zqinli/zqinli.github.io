@@ -17,8 +17,10 @@
   </head>
   <body>
     {% include header.html %}
-    <div class="site-shell">
+    <div class="site-shell{% if page.title == 'Home' %} home-shell{% endif %}">
+      {% if page.title == "Home" %}
       {% include sidebar.html %}
+      {% endif %}
       <main class="content" id="main-content">
         {{ content }}
       </main>
