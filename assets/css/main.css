@@ -599,12 +599,24 @@ code {
 
 .site-footer {
   border-top: 1px solid var(--border);
-  color: var(--text);
-  font-size: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
   margin: 0 auto;
   max-width: 1280px;
   padding: 1.2rem 1.25rem 2rem;
   width: 100%;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-footer a:hover {
+  color: var(--link-hover);
 }
 
 @media (max-width: 1040px) {
