@@ -13,16 +13,9 @@ function updateThemeToggle() {
 
   const theme = getCurrentTheme();
   const nextTheme = theme === "dark" ? "light" : "dark";
-  const icon = button.querySelector(".theme-icon");
 
   button.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
   button.setAttribute("title", `Switch to ${nextTheme} mode`);
-
-  if (icon) {
-    icon.innerHTML = nextTheme === "dark"
-      ? '<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"></path>'
-      : '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>';
-  }
 }
 
 function setTheme(theme) {

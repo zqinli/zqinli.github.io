@@ -10,7 +10,11 @@
       <a{% if page.url == '/about/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
       <a{% if page.url contains '/publications/' %} class="is-active" aria-current="page"{% endif %} href="{{ '/publications/' | relative_url }}">Publications</a>
       <button class="theme-toggle" type="button" aria-label="Switch color mode" title="Switch color mode">
-        <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="theme-symbol theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+        </svg>
+        <svg class="theme-symbol theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"></path>
         </svg>
       </button>

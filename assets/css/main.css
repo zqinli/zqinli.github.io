@@ -160,7 +160,7 @@ a:hover {
   color: var(--link-hover);
 }
 
-.theme-icon {
+.theme-symbol {
   fill: none;
   flex: 0 0 auto;
   height: 1.1rem;
@@ -169,6 +169,28 @@ a:hover {
   stroke-linejoin: round;
   stroke-width: 1.9;
   width: 1.1rem;
+}
+
+.theme-icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .theme-icon-sun {
+    display: none;
+  }
+
+  html:not([data-theme]) .theme-icon-moon {
+    display: block;
+  }
 }
 
 .site-shell {
