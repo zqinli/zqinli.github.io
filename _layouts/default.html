@@ -6,6 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.title | escape }}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    {% if page.url == '/' %}
+    {% capture person_id %}{{ '/' | absolute_url }}#person{% endcapture %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": {{ person_id | strip | jsonify }},
+        "name": {{ site.data.profile.name | jsonify }},
+        "url": {{ '/' | absolute_url | jsonify }},
+        "email": {{ site.data.profile.emails[0] | jsonify }},
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": {{ site.data.profile.affiliation_name | jsonify }},
+          "alternateName": {{ site.data.profile.affiliation | jsonify }},
+          "url": {{ site.data.profile.affiliation_url | jsonify }}
+        },
+        "sameAs": [
+          {{ site.data.profile.orcid | jsonify }},
+          {{ site.data.profile.github | jsonify }}{% if site.data.profile.scholar and site.data.profile.scholar != "" %},
+          {{ site.data.profile.scholar | jsonify }}{% endif %}
+        ]
+      }
+    </script>
+    {% endif %}
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <meta property="og:title" content="{{ document_title | strip | escape }}">
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
@@ -25,6 +49,7 @@
     <meta name="twitter:image:alt" content="{{ social_image_alt | escape }}">
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
     <script>
       (function () {
         try {

@@ -105,6 +105,7 @@ The generated site is written to `_site/`.
 ## Update Flow
 
 1. Edit content files such as `_data/profile.yml`, `_data/news.yml`, `index.html`, or `_publications/*.md`.
+   When changing a page, also update its `last_modified_at` front matter value so the sitemap remains accurate.
 2. Build locally:
 
 ```bash

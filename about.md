@@ -4,6 +4,7 @@ layout: page
 permalink: /about/
 description: Education and academic background of Zhenqin Li.
 page_class: about-page
+last_modified_at: "2026-08-06"
 ---
 
 <section class="about-section">

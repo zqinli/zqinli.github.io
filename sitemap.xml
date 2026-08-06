@@ -6,10 +6,20 @@ sitemap: false
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% assign sitemap_pages = site.pages | sort: 'url' -%}
   {% for item in sitemap_pages -%}
-    {% unless item.sitemap == false or item.url contains '.xml' or item.url contains '.txt' -%}
+    {% assign include_item = true -%}
+    {% if item.sitemap == false or item.url contains '.xml' or item.url contains '.txt' -%}
+      {% assign include_item = false -%}
+    {% endif -%}
+    {% if item.url == '/news/' and site.data.news.size <= 3 -%}
+      {% assign include_item = false -%}
+    {% endif -%}
+    {% if include_item -%}
   <url>
     <loc>{{ item.url | absolute_url | xml_escape }}</loc>
+    {% if item.last_modified_at -%}
+    <lastmod>{{ item.last_modified_at | date: '%Y-%m-%d' }}</lastmod>
+    {% endif -%}
   </url>
-    {% endunless -%}
+    {% endif -%}
   {% endfor -%}
 </urlset>
