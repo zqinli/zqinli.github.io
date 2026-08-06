@@ -612,7 +612,7 @@ code {
 }
 
 .site-footer a {
-  color: inherit;
+  color: var(--link);
 }
 
 .site-footer a:hover {
