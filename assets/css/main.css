@@ -675,6 +675,25 @@ code {
   }
 }
 
+@media (max-width: 840px) {
+  .home-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .sidebar {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.2fr);
+    position: static;
+  }
+
+  .home-shell .profile-links {
+    border-left: 1px solid var(--border-soft);
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+}
+
 @media (max-width: 760px) {
   .nav {
     align-items: flex-start;
@@ -684,23 +703,6 @@ code {
 
   .site-shell {
     padding-top: 1.25rem;
-  }
-
-  .home-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.2fr);
-    position: static;
-  }
-
-  .profile-links {
-    border-left: 1px solid var(--border-soft);
-    margin: 0;
-    padding-left: 1.5rem;
   }
 
   .publication-card {
@@ -731,28 +733,50 @@ code {
   }
 }
 
+@media (max-width: 600px) {
+  .home-shell .sidebar {
+    display: block;
+    padding: 0.9rem;
+  }
+
+  .profile-meta {
+    padding-bottom: 0.7rem;
+  }
+
+  .profile-meta p {
+    margin: 0.4rem 0;
+  }
+
+  .home-shell .profile-links {
+    border-left: 0;
+    margin-top: 0.7rem;
+    padding-left: 0;
+  }
+
+  .profile-links li + li {
+    margin-top: 0.45rem;
+  }
+}
+
 @media (max-width: 520px) {
   .nav {
     padding: 0.75rem 1rem;
+    position: relative;
   }
 
   .nav-links {
     gap: 0.7rem;
   }
 
+  .theme-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+  }
+
   .site-shell {
     padding-left: 0.9rem;
     padding-right: 0.9rem;
-  }
-
-  .sidebar {
-    display: block;
-  }
-
-  .profile-links {
-    border-left: 0;
-    margin-top: 1rem;
-    padding-left: 0;
   }
 
   .intro {
