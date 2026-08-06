@@ -1,8 +1,12 @@
 document.documentElement.classList.add("js-enabled");
 
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
 function getCurrentTheme() {
-  return document.documentElement.getAttribute("data-theme")
-    || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const selectedTheme = document.documentElement.getAttribute("data-theme");
+  return selectedTheme === "light" || selectedTheme === "dark"
+    ? selectedTheme
+    : (systemTheme.matches ? "dark" : "light");
 }
 
 function updateThemeToggle() {
@@ -34,6 +38,18 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     setTheme(getCurrentTheme() === "dark" ? "light" : "dark");
   });
+
+  const handleSystemThemeChange = () => {
+    if (!document.documentElement.hasAttribute("data-theme")) {
+      updateThemeToggle();
+    }
+  };
+
+  if (systemTheme.addEventListener) {
+    systemTheme.addEventListener("change", handleSystemThemeChange);
+  } else {
+    systemTheme.addListener(handleSystemThemeChange);
+  }
 }
 
 let lastBibtexTrigger = null;
@@ -45,13 +61,14 @@ function getBibtexModal() {
     modal = document.createElement("div");
     modal.className = "bibtex-modal";
     modal.setAttribute("aria-hidden", "true");
+    modal.hidden = true;
     modal.innerHTML = `
       <div class="bibtex-dialog" role="dialog" aria-modal="true" aria-labelledby="bibtex-title">
         <div class="bibtex-dialog-header">
           <h3 id="bibtex-title">BibTeX</h3>
           <button class="bibtex-close" type="button" aria-label="Close BibTeX popup">&times;</button>
         </div>
-        <textarea class="bibtex-text" readonly></textarea>
+        <textarea class="bibtex-text" aria-label="BibTeX citation" readonly></textarea>
         <div class="bibtex-dialog-actions">
           <span class="bibtex-status" aria-live="polite"></span>
           <button class="button bibtex-copy" type="button">Copy</button>
@@ -72,8 +89,10 @@ function getBibtexModal() {
 
 function closeBibtexModal() {
   const modal = document.querySelector(".bibtex-modal");
-  if (modal) {
+  if (modal && !modal.hidden) {
     modal.classList.remove("is-visible");
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
   }
 
   if (lastBibtexTrigger) {
@@ -81,7 +100,7 @@ function closeBibtexModal() {
     lastBibtexTrigger = null;
   }
 
-  if (modal) {
+  if (modal && modal.hidden) {
     modal.setAttribute("aria-hidden", "true");
   }
 }
@@ -97,8 +116,10 @@ document.querySelectorAll(".bibtex-open").forEach((button) => {
     lastBibtexTrigger = button;
     text.value = bibtex;
     status.textContent = "";
+    modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     modal.classList.add("is-visible");
+    document.body.classList.add("modal-open");
     modal.querySelector(".bibtex-close").focus();
 
     copy.onclick = async () => {

@@ -6,20 +6,13 @@ markdown: kramdown
 
 collections:
   publications:
-    output: true
-    permalink: /publications/:name/
+    output: false
 
 defaults:
   - scope:
       path: ""
     values:
       layout: default
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: page
-
 exclude:
   - vendor
   - node_modules

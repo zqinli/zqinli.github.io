@@ -12,10 +12,4 @@ sitemap: false
   </url>
     {% endunless -%}
   {% endfor -%}
-  {% assign sitemap_publications = site.publications | sort: 'url' -%}
-  {% for publication in sitemap_publications -%}
-  <url>
-    <loc>{{ publication.url | absolute_url | xml_escape }}</loc>
-  </url>
-  {% endfor -%}
 </urlset>

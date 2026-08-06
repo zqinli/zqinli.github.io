@@ -1,7 +1,11 @@
 <article class="publication-card{% if publication.selected %} selected{% endif %}">
   {% if publication.teaser %}
   <div class="publication-teaser">
-    <img src="{{ publication.teaser | relative_url }}" alt="Teaser image for {{ publication.title }}">
+    <img
+      src="{{ publication.teaser | relative_url }}"
+      alt="{{ publication.teaser_alt | default: publication.title | escape }}"
+      {% if publication.teaser_width %}width="{{ publication.teaser_width }}"{% endif %}
+      {% if publication.teaser_height %}height="{{ publication.teaser_height }}"{% endif %}>
   </div>
   {% endif %}
   <div class="publication-body">
