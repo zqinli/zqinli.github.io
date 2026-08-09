@@ -56,13 +56,12 @@ body {
 
 a {
   color: var(--link);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
+  text-decoration: none;
 }
 
 a:hover {
   color: var(--link-hover);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 :where(a, button):focus-visible {
@@ -239,7 +238,8 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .profile-meta a:hover,
 .profile-links a:hover {
-  text-decoration: underline;
+  color: var(--link-hover);
+  text-decoration: none;
 }
 
 .profile-links {
@@ -423,8 +423,7 @@ html[data-theme="dark"] .theme-icon-moon {
 .more-link {
   color: var(--text);
   font-weight: 650;
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
+  text-decoration: none;
 }
 
 .publication-card {
