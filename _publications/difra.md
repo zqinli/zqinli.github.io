@@ -4,7 +4,7 @@ description: "DiFRa studies question-answer generation by harmonizing semantic d
 authors: "Zhenqin Li, Shengyong Ding, and Shuangyin Li"
 venue: "Findings of ACL"
 year: 2026
-teaser: "/assets/images/difra_overview.svg"
+teaser: "/assets/images/difra_overview-light.svg"
 teaser_alt: "Overview of the DiFRa framework, from concept diversification and knowledge graph refinement to question-answer generation and training objectives."
 teaser_width: 1350
 teaser_height: 629

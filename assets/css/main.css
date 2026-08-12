@@ -436,7 +436,7 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .publication-teaser {
   align-self: start;
-  background: var(--surface-soft);
+  background: #ffffff;
   border: 1px solid var(--border-soft);
   border-radius: 8px;
   box-shadow: none;
@@ -531,6 +531,11 @@ html[data-theme="dark"] .theme-icon-moon {
   stroke-linejoin: round;
   stroke-width: 2;
   width: 0.95rem;
+}
+
+.button-icon-solid {
+  fill: currentColor;
+  stroke: none;
 }
 
 pre {
@@ -828,18 +833,18 @@ body.modal-open {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #111820;
-    --surface: #17212b;
-    --surface-soft: #192530;
-    --surface-muted: #202c38;
-    --text: #e8edf2;
-    --muted: #a7b3bf;
-    --border: #2d3a46;
-    --border-soft: #263441;
-    --link: #8fc7ff;
-    --link-hover: #b7dbff;
-    --button-bg: #21344a;
-    --button-text: #b7dbff;
+    --bg: #1b222a;
+    --surface: #222a33;
+    --surface-soft: #242d36;
+    --surface-muted: #2b3540;
+    --text: #cdd5de;
+    --muted: #99a5b1;
+    --border: #38434e;
+    --border-soft: #303b46;
+    --link: #86add2;
+    --link-hover: #a4c2dc;
+    --button-bg: #2b3b4a;
+    --button-text: #9bbbd6;
     --shadow: none;
   }
 }
@@ -863,17 +868,17 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #111820;
-  --surface: #17212b;
-  --surface-soft: #192530;
-  --surface-muted: #202c38;
-  --text: #e8edf2;
-  --muted: #a7b3bf;
-  --border: #2d3a46;
-  --border-soft: #263441;
-  --link: #8fc7ff;
-  --link-hover: #b7dbff;
-  --button-bg: #21344a;
-  --button-text: #b7dbff;
+  --bg: #1b222a;
+  --surface: #222a33;
+  --surface-soft: #242d36;
+  --surface-muted: #2b3540;
+  --text: #cdd5de;
+  --muted: #99a5b1;
+  --border: #38434e;
+  --border-soft: #303b46;
+  --link: #86add2;
+  --link-hover: #a4c2dc;
+  --button-bg: #2b3b4a;
+  --button-text: #9bbbd6;
   --shadow: none;
 }
